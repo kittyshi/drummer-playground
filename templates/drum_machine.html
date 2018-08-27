@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drum_machine_LSTM </title>
+	<link rel="stylesheet" type="text/css" href = "drummachine.css" />
+
+</head>
+<body id= 'body'>
+	<div id='title'>
+        This is the demo for Drum_machine_LSTM <span id='version'>1.0</span>
+    </div>
+    <section class='container active' id='pad'>
+        <div class='buttons_row'>
+            <span class='label'>Tom 1</span>
+            <img id='Tom1_0' class='btn' src='images/button_off.png'>
+            <img id='Tom1_1' class='btn' src='images/button_off.png'>
+            <img id='Tom1_2' class='btn' src='images/button_off.png'>
+            <img id='Tom1_3' class='btn' src='images/button_off.png'>
+            <img id='Tom1_4' class='btn' src='images/button_off.png'>
+            <img id='Tom1_5' class='btn' src='images/button_off.png'>
+            <img id='Tom1_6' class='btn' src='images/button_off.png'>
+            <img id='Tom1_7' class='btn' src='images/button_off.png'>
+            <img id='Tom1_8' class='btn' src='images/button_off.png'>   
+        </div>
+
+        <div class='buttons_row'>
+            <span class='label'>Tom 2</span>
+            <img id='Tom2_0' class='btn' src='images/button_off.png'>
+            <img id='Tom2_1' class='btn' src='images/button_off.png'>
+            <img id='Tom2_2' class='btn' src='images/button_off.png'>
+            <img id='Tom2_3' class='btn' src='images/button_off.png'>
+            <img id='Tom2_4' class='btn' src='images/button_off.png'>
+            <img id='Tom2_5' class='btn' src='images/button_off.png'>
+            <img id='Tom2_6' class='btn' src='images/button_off.png'>
+            <img id='Tom2_7' class='btn' src='images/button_off.png'>
+            <img id='Tom2_8' class='btn' src='images/button_off.png'>
+        </div>
+
+        <div class='buttons_row'>
+            <span class='label'>Tom 3</span>
+            <img id='Tom3_0' class='btn' src='images/button_off.png'>
+            <img id='Tom3_1' class='btn' src='images/button_off.png'>
+            <img id='Tom3_2' class='btn' src='images/button_off.png'>
+            <img id='Tom3_3' class='btn' src='images/button_off.png'>
+            <img id='Tom3_4' class='btn' src='images/button_off.png'>
+            <img id='Tom3_5' class='btn' src='images/button_off.png'>
+            <img id='Tom3_6' class='btn' src='images/button_off.png'>
+            <img id='Tom3_7' class='btn' src='images/button_off.png'>
+            <img id='Tom3_8' class='btn' src='images/button_off.png'>
+        </div>
+
+        <div class='buttons_row'>
+            <span class='label'>Hi-Hat</span>
+            <img id='HiHat_0' class='btn' src='images/button_off.png'>
+            <img id='HiHat_1' class='btn' src='images/button_off.png'>
+            <img id='HiHat_2' class='btn' src='images/button_off.png'>
+            <img id='HiHat_3' class='btn' src='images/button_off.png'>
+            <img id='HiHat_4' class='btn' src='images/button_off.png'>
+            <img id='HiHat_5' class='btn' src='images/button_off.png'>
+            <img id='HiHat_6' class='btn' src='images/button_off.png'>
+            <img id='HiHat_7' class='btn' src='images/button_off.png'>
+            <img id='HiHat_8' class='btn' src='images/button_off.png'>
+        </div>
+        <div class='buttons_row'>
+            <span class='label'>Snare</span>
+            <img id='Snare_0' class='btn' src='images/button_off.png'>
+            <img id='Snare_1' class='btn' src='images/button_off.png'>
+            <img id='Snare_2' class='btn' src='images/button_off.png'>
+            <img id='Snare_3' class='btn' src='images/button_off.png'>
+            <img id='Snare_4' class='btn' src='images/button_off.png'>
+            <img id='Snare_5' class='btn' src='images/button_off.png'>
+            <img id='Snare_6' class='btn' src='images/button_off.png'>
+            <img id='Snare_7' class='btn' src='images/button_off.png'>
+            <img id='Snare_8' class='btn' src='images/button_off.png'>
+        </div>
+        <div class='buttons_row'>
+            <span class='label'>Kick</span>
+            <img id='Kick_0' class='btn' src='images/button_off.png'>
+            <img id='Kick_1' class='btn' src='images/button_off.png'>
+            <img id='Kick_2' class='btn' src='images/button_off.png'>
+            <img id='Kick_3' class='btn' src='images/button_off.png'>
+            <img id='Kick_4' class='btn' src='images/button_off.png'>
+            <img id='Kick_5' class='btn' src='images/button_off.png'>
+            <img id='Kick_6' class='btn' src='images/button_off.png'>
+            <img id='Kick_7' class='btn' src='images/button_off.png'>
+            <img id='Kick_8' class='btn' src='images/button_off.png'>
+        </div>
+        <div class='buttons_row' id='LED_row'>
+            <span class='label'></span>
+            <img id='LED_0' src='images/LED_off.png'>
+            <img id='LED_1' src='images/LED_off.png'>
+            <img id='LED_2' src='images/LED_off.png'>
+            <img id='LED_3' src='images/LED_off.png'>
+            <img id='LED_4' src='images/LED_off.png'>
+            <img id='LED_5' src='images/LED_off.png'>
+            <img id='LED_6' src='images/LED_off.png'>
+            <img id='LED_7' src='images/LED_off.png'>
+            <img id='LED_8' src='images/LED_off.png'>
+            
+        </div>
+    </section>
+
+    <section class='container active' id='params'>
+           	<div id='tempo_container'>
+                <span class='label' id='tempolabel'>Tempo</span>
+                <div id='tempodisplay'>
+                <span id='tempo'></span>&nbsp;<span id='bpm'>bpm</span>
+                <input type="text" id="uname" >
+                </div>
+                <img id='tempodec' src='images/tempo_dec.png'><img id='tempoinc' src='images/tempo_inc.png'>
+            </div>
+            <div class='slider_container' id='swing_container'>
+                <span class='label' id='swinglabel'>Swing</span>
+                <div class='slider_groove'>
+                    <img class='slider_track' src='images/sliderh_track.png'>
+                    <img class='slider_thumb' id='swing_thumb' src='images/sliderh_thumb.png'>
+                </div>
+            </div>
+        </div>
+        <div class='vrule'></div>
+        <div class='slider_container' id='effect_container'>
+            <div class='slider_groove'>
+                <img class='slider_track' src='images/slider_track.png'>
+                <img class='slider_thumb' id='effect_thumb' src='images/slider_thumb.png'>
+            </div>
+            <div class='slider_label'>
+                Effect Level
+            </div>
+        </div>
+        <div class='vrule'></div>
+        <div class='slider_container' id='kick_container'>
+            <div class='slider_groove'>
+                <img class='slider_track' src='images/slider_track.png'>
+                <img class='slider_thumb' id='kick_thumb' src='images/slider_thumb.png'>
+            </div>
+            <div class='slider_label'>
+                Kick Pitch
+            </div>
+        </div>
+        <div class='slider_container' id='snare_container'>
+            <div class='slider_groove'>
+                <img class='slider_track' src='images/slider_track.png'>
+                <img class='slider_thumb' id='snare_thumb' src='images/slider_thumb.png'>
+            </div>
+            <div class='slider_label'>
+                Snare Pitch
+            </div>
+        </div>
+        <div class='slider_container' id='hihat_container'>
+            <div class='slider_groove'>
+                <img class='slider_track' src='images/slider_track.png'>
+                <img class='slider_thumb' id='hihat_thumb' src='images/slider_thumb.png'>
+            </div>
+            <div class='slider_label'>
+                Hi-Hat Pitch
+            </div>
+        </div>
+        <div class='slider_container' id='tom1_container'>
+            <div class='slider_groove'>
+                <img class='slider_track' src='images/slider_track.png'>
+                <img class='slider_thumb' id='tom1_thumb' src='images/slider_thumb.png'>
+            </div>
+            <div class='slider_label'>
+                Tom 1 Pitch
+            </div>
+        </div>
+        <div class='slider_container' id='tom2_container'>
+            <div class='slider_groove'>
+                <img class='slider_track' src='images/slider_track.png'>
+                <img class='slider_thumb' id='tom2_thumb' src='images/slider_thumb.png'>
+            </div>
+            <div class='slider_label'>
+                Tom 2 Pitch
+            </div>
+        </div>
+        <div class='slider_container' id='tom3_container'>
+            <div class='slider_groove'>
+                <img class='slider_track' src='images/slider_track.png'>
+                <img class='slider_thumb' id='tom3_thumb' src='images/slider_thumb.png'>
+            </div>
+            <div class='slider_label'>
+                Tom 3 Pitch
+            </div>
+        </div>
+    </section>
+    
+	
+
+</body>
+</html>
