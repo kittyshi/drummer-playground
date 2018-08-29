@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drum_machine_LSTM </title>
+	<!-- <link rel="stylesheet" type="text/css" href = "drummachine.css" /> -->
+
+</head>
+<body id= 'body'>
+	<div id='title'>
+        This is the demo for Drum_machine_LSTM <span id='version'>1.0</span>
+    </div>
+    <section class='container active' id='pad'>
+        <div class='buttons_row'>
+            <span class='label'>Bass</span>
+            <img id='Bass' class='btn' src='static/images/button_off.png'>
+            <span class='label'>Tom</span>
+            <img id='Tom' class='btn' src='static/images/button_off.png'>
+            <span class='label'>Hi-Hat</span>
+            <img id='HiHat' class='btn' src='static/images/button_off.png'>
+            <span class='label'>Snare</span>
+            <img id='Snare' class='btn' src='static/images/button_off.png'>
+             <span class='label'>Kick</span>
+            <img id='Kick' class='btn' src='static/images/button_off.png'>
+        </div>
+    </section>
+
+    <section class='container active' id='params'>
+           	<div id='tempo_container'>
+                <span class='label' id='tempolabel'>Tempo</span>
+                <div id='tempodisplay'>
+                <span id='tempo'></span>&nbsp;<span id='bpm'>bpm</span>
+                <input type="text" id="uname" >
+                </div>
+                <img id='tempodec' src='static/images/tempo_dec.png'><img id='tempoinc' src='static/images/tempo_inc.png'>
+            </div>
+            <div class='slider_container' id='swing_container'>
+                <span class='label' id='swinglabel'>Swing</span>
+                <div class='slider_groove'>
+                    <img class='slider_track' src='static/images/sliderh_track.png'>
+                    <img class='slider_thumb' id='swing_thumb' src='static/images/sliderh_thumb.png'>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+</html>
